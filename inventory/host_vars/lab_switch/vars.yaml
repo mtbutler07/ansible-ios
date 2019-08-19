@@ -1,0 +1,52 @@
+# Lab Switch is a Cisco 2960C-8 TLC running IOS v15.2
+interfaces:
+- name: GigabitEthernet0/1
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/2
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/3
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/4
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/5
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/6
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/7
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/8
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/9
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
+- name: GigabitEthernet0/10
+  state:
+  interface_mode:
+  l2_mode:
+  ipv4: 
