@@ -1,0 +1,3 @@
+- name: Save Configuration
+  ios_config:
+    save_when: always

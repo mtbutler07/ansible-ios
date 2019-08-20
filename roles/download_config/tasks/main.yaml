@@ -1,0 +1,5 @@
+- name: Download Configuration
+  ios_config:
+    backup: yes
+    backup_options:
+      dir_path: configs

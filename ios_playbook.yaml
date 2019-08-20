@@ -1,0 +1,8 @@
+- name: Configure IOS Devices
+  gather_facts: no
+  hosts: all
+  roles:
+  - ntp
+  - dns
+  - download_config
+  - save_config

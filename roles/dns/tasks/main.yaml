@@ -1,0 +1,5 @@
+- name: Configure DNS Servers
+  ios_system:
+    name_servers:
+    - "{{ item }}"
+  loop: "{{ dns_servers }}"
