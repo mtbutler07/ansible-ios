@@ -1,5 +1,10 @@
+- name: Enable Domain Name Lookup
+  ios_system:
+    lookup_enabled: yes
+    state: present
+
 - name: Configure DNS Servers
   ios_system:
-    name_servers:
-    - "{{ item }}"
+    name_servers: "{{ item }}"
+    state: present
   loop: "{{ dns_servers }}"

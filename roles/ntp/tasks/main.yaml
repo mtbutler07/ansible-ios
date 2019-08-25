@@ -1,4 +1,4 @@
-- name: Configure NTP Servers 
+- name: Configure NTP Servers
   ios_ntp:
     server: "{{ item }}"
     state: present
