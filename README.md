@@ -10,8 +10,6 @@ Roles Covered:
 
 - Configure NTP Servers
 - Setup DNS Servers
-- Configure Layer 2 Interfaces
-- Configure Layer 3 Interfaces
 - Set Interface Description based on Current CDP/LLDP Neighbors
 - Get Running Config
 - Save Running Config to Startup Config
@@ -21,7 +19,7 @@ Roles Covered:
 1) OS that is not Windows - [WSL FTW](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 2) Ansible 2.8.4
 3) Python 3.7.4
-4) Pipenv or other virtual environment
+4) Pipenv or other Python virtual environment
 
 ## Installing
 
@@ -52,14 +50,14 @@ OR install dependencies using pip
 $ python3 -m pip install -r requirements.txt -U --user
 ```
 
-Modify the Username, Password, and Enable Password in the sample host_vars secret file to for your environment.
+Modify the username, password, and enable Password in the sample host_vars secret file for your environment.
 Rename the file to secrets.yaml
-Encrypt using Ansible Vault
+and encrypt using Ansible Vault
 
 ```bash
 
 $ cd inventory/host_vars/lab_switch
-$ nano secrets.example.yaml
+$ vi secrets.example.yaml
 $ mv secrets.example.yaml secrets.yaml
 
 $ ansible-vault encrypt secrets.yaml
@@ -79,11 +77,6 @@ $ ansible-playbook ios_playbook -i inventory/homelab --ask-vault-pass
   Vault password: hunter2
 ```
 
-## Authors
-
-**Marcus Butler**
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
