@@ -1,0 +1,11 @@
+- name: Get Interface Facts
+  ios_facts:
+    gather_subset:
+      - interfaces
+  register: interface_facts
+
+- name: Set Interface Description Based on CDP/LLDP Neighbors
+  ios_interface:
+      name: "{{ item['key'] }}"
+      description: "{{ item['value'][0]['host'] }} - {{ item['value'][0]['port'] }}"
+  with_dict: "{{ interface_facts['ansible_facts']['ansible_net_neighbors'] }}"

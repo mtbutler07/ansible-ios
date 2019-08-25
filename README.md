@@ -4,7 +4,7 @@ The repository contains examples of Ansible roles used to configure different it
 
 Sensitive credentials are encrypted using Ansible vault and are not stored in this repo. Example secrets.yaml files are provided with instructions on how to use ansible vault.
 
-When creating a new variable, if it's common among the entire group (Ex: DNS, NTP servers), they're stored in group_vars otherwise, they're stored in the specific host_vars files (Ex: Passwords, Interface IP addresses).
+When creating a new variable, if it's common among the entire group, they're stored in group_vars otherwise, they're stored in the individual host_vars directory.
 
 Roles Covered:
 
@@ -13,18 +13,13 @@ Roles Covered:
 - Configure Layer 2 Interfaces
 - Configure Layer 3 Interfaces
 - Set Interface Description based on Current CDP/LLDP Neighbors
-- Default Password Change
 - Get Running Config
-- Save Running Config
-
-## Network Topology
-
-TODO
+- Save Running Config to Startup Config
 
 ## Prerequisites
 
 1) OS that is not Windows - [WSL FTW](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-2) Ansible 2.8.3
+2) Ansible 2.8.4
 3) Python 3.7.4
 4) Pipenv or other virtual environment
 
@@ -51,7 +46,7 @@ $ pipenv install
 $ pipenv shell
 ```
 
-OR Install dependencies using Pip
+OR install dependencies using pip
 
 ```bash
 $ python3 -m pip install -r requirements.txt -U --user
@@ -68,32 +63,27 @@ $ nano secrets.example.yaml
 $ mv secrets.example.yaml secrets.yaml
 
 $ ansible-vault encrypt secrets.yaml
+
   New Vault password: hunter2
   Confirm New Vault password: hunter2
   Encryption successful
 ```
-
 
 ## Usage
 
 Run the full Ansible playbook
 
 ```bash
-$ ansible-playbook ios_playbook -i inventory/hosts --ask-vault-pass
+$ ansible-playbook ios_playbook -i inventory/homelab --ask-vault-pass
+
+  Vault password: hunter2
 ```
 
 ## Authors
 
-* **Marcus Butler**
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+**Marcus Butler**
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc

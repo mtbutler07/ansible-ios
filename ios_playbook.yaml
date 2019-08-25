@@ -4,5 +4,6 @@
   roles:
   - ntp
   - dns
+  - interfaces
   - download_config
   - save_config
